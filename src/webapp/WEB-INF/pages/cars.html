@@ -5,12 +5,12 @@
     <title>Cars</title>
     <style>
         html * {
-            font-size: 16px;
-            color: 2020131;
+            font-size: 26px;
+            color: green;
             font-family: Roboto;
         }
-        table, table td {
-            border: 1px solid #cccccc;
+        table, td, th {
+            border: 1px solid grey;
         }
         td {
             height: 80px;
@@ -21,13 +21,19 @@
     </style>
 </head>
 <body>
-<table id="cars list" class="table table-bordered" style="width: 80%">
-    <thead>Requested cars list is:</thead>
+<table>
+    <thead><b>List of Cars:</b>
+        <tr>
+            <th>Car_Name</th>
+            <th>Car_Model</th>
+            <th>Car_Power</th>
+        </tr>
+    </thead>
     <tbody>
     <tr th:each="car : ${cars}">
-        <td><span th:text="${car.name}"> Name </span></td>
-        <td><span th:text="${car.model}"> Model </span></td>
-        <td><span th:text="${car.horsePower}"> Power </span></td>
+        <td th:text="${car.name}"> Name </td>
+        <td th:text="${car.model}"> Model </td>
+        <td th:text="${car.horsePower}"> Power </td>
     </tr>
     </tbody>
 </table>
